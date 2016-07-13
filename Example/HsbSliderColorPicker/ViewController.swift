@@ -9,9 +9,13 @@
 import UIKit
 import HsbSliderColorPicker
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, HsbSliderViewDelegate {
   
-  @IBOutlet private weak var hsbSliderView: HsbSliderView!
+  @IBOutlet private weak var hsbSliderView: HsbSliderView! {
+    didSet {
+      hsbSliderView.delegate = self
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,5 +24,9 @@ class ViewController: UIViewController {
   
   @IBAction private func changeColor(sender: HsbSliderView) {
     view.backgroundColor = sender.color
+  }
+  
+  func hsbSliderView(hsbSliderView: HsbSliderView, didChangeColor color: UIColor) {
+    print(color)
   }
 }
