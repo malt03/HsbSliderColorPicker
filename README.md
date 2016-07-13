@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/HsbSliderColorPicker.svg?style=flat)](http://cocoapods.org/pods/HsbSliderColorPicker)
 [![Platform](https://img.shields.io/cocoapods/p/HsbSliderColorPicker.svg?style=flat)](http://cocoapods.org/pods/HsbSliderColorPicker)
 
+[Screenshot](https://raw.githubusercontent.com/malt03/HsbSliderColorPicker/master/Screenshot.png)
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

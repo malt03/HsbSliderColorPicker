@@ -16,7 +16,7 @@ This pod is to create a color picker with sliders for hsb.
                        DESC
 
   s.homepage         = 'https://github.com/malt03/HsbSliderColorPicker'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots      = 'https://github.com/malt03/HsbSliderColorPicker/blob/master/Screenshot.png?raw=true'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Koji Murata' => 'koji.murata@dena.com' }
   s.source           = { :git => 'https://github.com/malt03/HsbSliderColorPicker.git', :tag => s.version.to_s }
