@@ -11,7 +11,23 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## Usage
+You can set HsbSliderView for UIView on Interface Builder.
+
+```swift
+@IBAction private func changeColor(sender: HsbSliderView) {
+  // sender.color
+}
+```
+
+or
+
+```swift
+hsbSliderView.delegate = self
+func hsbSliderView(hsbSliderView: HsbSliderView, didChangeColor color: UIColor) {
+  // color
+}
+```
 
 ## Installation
 
