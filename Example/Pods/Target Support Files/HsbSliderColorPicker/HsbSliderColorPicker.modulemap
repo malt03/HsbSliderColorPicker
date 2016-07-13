@@ -1,0 +1,6 @@
+framework module HsbSliderColorPicker {
+  umbrella header "HsbSliderColorPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

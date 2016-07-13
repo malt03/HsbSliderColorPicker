@@ -1,0 +1,16 @@
+PODS:
+  - HsbSliderColorPicker (0.1.0)
+
+DEPENDENCIES:
+  - HsbSliderColorPicker (from `../`)
+
+EXTERNAL SOURCES:
+  HsbSliderColorPicker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HsbSliderColorPicker: 14fdd0db23b76b2fa795037fdd028b8fa55c8ebb
+
+PODFILE CHECKSUM: d44bf826483bc4bb09d57716931b3e0415ccc269
+
+COCOAPODS: 1.0.1

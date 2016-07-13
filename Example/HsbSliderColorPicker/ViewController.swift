@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import HsbSliderColorPicker
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  
+  @IBOutlet private weak var hsbSliderView: HsbSliderView!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    hsbSliderView.color = view.backgroundColor!
+  }
+  
+  @IBAction private func changeColor(sender: HsbSliderView) {
+    view.backgroundColor = sender.color
+  }
 }
-
