@@ -48,4 +48,8 @@ class GradientSlider: UISlider {
     CGContextSetLineWidth(c, 1)
     CGContextStrokeRect(c, clipRect)
   }
+  
+  override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+    return true
+  }
 }

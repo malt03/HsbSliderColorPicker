@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HsbSliderMainView: UIView {
+final class HsbSliderMainView: UIView {
   var color: UIColor {
     get {
       return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
