@@ -1,7 +1,7 @@
 # HsbSliderColorPicker
 
 [![Platform](https://img.shields.io/cocoapods/p/HsbSliderColorPicker.svg?style=flat)](http://cocoapods.org/pods/HsbSliderColorPicker)
-![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)
+![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)
 [![CocoaPods](https://img.shields.io/cocoapods/v/HsbSliderColorPicker.svg?style=flat)](http://cocoapods.org/pods/HsbSliderColorPicker)
 ![License](https://img.shields.io/github/license/malt03/HsbSliderColorPicker.svg?style=flat)
 
