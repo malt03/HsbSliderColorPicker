@@ -1,9 +1,10 @@
 {
   "name": "HsbSliderColorPicker",
-  "version": "0.1.0",
-  "summary": "A short description of HsbSliderColorPicker.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/HsbSliderColorPicker",
+  "version": "0.3.0-beta1",
+  "summary": "Simple color picker with hsb.",
+  "description": "This pod is to create a color picker with sliders for hsb.",
+  "homepage": "https://github.com/malt03/HsbSliderColorPicker",
+  "screenshots": "https://github.com/malt03/HsbSliderColorPicker/blob/master/Screenshot.png?raw=true",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +13,8 @@
     "Koji Murata": "malt.koji@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/HsbSliderColorPicker.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/malt03/HsbSliderColorPicker.git",
+    "tag": "0.3.0-beta1"
   },
   "platforms": {
     "ios": "8.0"

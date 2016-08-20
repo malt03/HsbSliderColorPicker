@@ -1,5 +1,5 @@
 PODS:
-  - HsbSliderColorPicker (0.1.0)
+  - HsbSliderColorPicker (0.3.0-beta1)
 
 DEPENDENCIES:
   - HsbSliderColorPicker (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HsbSliderColorPicker: 14fdd0db23b76b2fa795037fdd028b8fa55c8ebb
+  HsbSliderColorPicker: e91eacd2f5fe43991311a570c0b909c583d6b4b5
 
 PODFILE CHECKSUM: d44bf826483bc4bb09d57716931b3e0415ccc269
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.beta.1

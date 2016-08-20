@@ -45,8 +45,8 @@ final class HsbSliderMainView: UIView {
   }
   
   var enabled: Bool {
-    set { sliders.forEach { $0.enabled = newValue } }
-    get { return hueSlider.enabled }
+    set { sliders.forEach { $0.isEnabled = newValue } }
+    get { return hueSlider.isEnabled }
   }
   
   override var tintColor: UIColor! {
@@ -57,46 +57,46 @@ final class HsbSliderMainView: UIView {
     get { return super.tintColor }
   }
 
-  var didChangeColorHandler: ((color: UIColor) -> Void)?
-  private var handlerEnabled = true
+  var didChangeColorHandler: ((_ color: UIColor) -> Void)?
+  fileprivate var handlerEnabled = true
   
-  @IBOutlet private weak var hueSlider: HueSlider!
-  @IBOutlet private weak var saturationSlider: SaturationSlider!
-  @IBOutlet private weak var brightnessSlider: BrightnessSlider!
+  @IBOutlet fileprivate weak var hueSlider: HueSlider!
+  @IBOutlet fileprivate weak var saturationSlider: SaturationSlider!
+  @IBOutlet fileprivate weak var brightnessSlider: BrightnessSlider!
   
-  private var sliders: [UISlider] {
+  fileprivate var sliders: [UISlider] {
     return [hueSlider, saturationSlider, brightnessSlider]
   }
   
-  @IBAction private func hueChanged() {
+  @IBAction fileprivate func hueChanged() {
     saturationSlider.hue = hue
     brightnessSlider.hue = hue
     colorChanged()
   }
   
-  @IBAction private func saturationChanged() {
+  @IBAction fileprivate func saturationChanged() {
     hueSlider.saturation = saturation
     brightnessSlider.saturation = saturation
     colorChanged()
   }
   
-  @IBAction private func brightnessChanged() {
+  @IBAction fileprivate func brightnessChanged() {
     hueSlider.brightness = brightness
     saturationSlider.brightness = brightness
     colorChanged()
   }
   
-  private func colorChanged() {
+  fileprivate func colorChanged() {
     if handlerEnabled {
-      didChangeColorHandler?(color: color)
+      didChangeColorHandler?(color)
     }
   }
   
   static func instance() -> HsbSliderMainView {
-    return UINib(nibName: "HsbSliderMainView", bundle: bundle).instantiateWithOwner(self, options: nil).first as! HsbSliderMainView
+    return UINib(nibName: "HsbSliderMainView", bundle: bundle).instantiate(withOwner: self, options: nil).first as! HsbSliderMainView
   }
   
-  private static var bundle: NSBundle {
-    return NSBundle(path: NSBundle(forClass: HsbSliderMainView.self).pathForResource("HsbSliderColorPicker", ofType: "bundle")!)!
+  fileprivate static var bundle: Bundle {
+    return Bundle(path: Bundle(for: HsbSliderMainView.self).path(forResource: "HsbSliderColorPicker", ofType: "bundle")!)!
   }
 }

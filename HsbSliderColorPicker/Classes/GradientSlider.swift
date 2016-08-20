@@ -23,33 +23,33 @@ class GradientSlider: UISlider {
     initialize()
   }
   
-  private func initialize() {
-    maximumTrackTintColor = .clearColor()
-    minimumTrackTintColor = .clearColor()
+  fileprivate func initialize() {
+    maximumTrackTintColor = .clear
+    minimumTrackTintColor = .clear
   }
   
-  override func drawRect(rect: CGRect) {
-    super.drawRect(rect)
+  override func draw(_ rect: CGRect) {
+    super.draw(rect)
     
-    let c = UIGraphicsGetCurrentContext()
+    guard let c = UIGraphicsGetCurrentContext() else { return }
     let s = CGColorSpaceCreateDeviceRGB()
     
     let maxPointIndex = colors.count - 1
     let locations = (0...maxPointIndex).map { CGFloat($0) / CGFloat(maxPointIndex) }
-    let cgColors = colors.map { $0.CGColor }
+    let cgColors = colors.map { $0.cgColor }
     
     let clipRect = CGRect(x: rect.height / 2, y: rect.height / 4, width: rect.width - rect.height, height: rect.height / 2)
-    CGContextAddPath(c, CGPathCreateWithRect(clipRect, nil))
-    CGContextClip(c)
-    let gradient = CGGradientCreateWithColors(s, cgColors, locations)
-    CGContextDrawLinearGradient(c, gradient, CGPoint(x: rect.height / 2, y: 0), CGPoint(x: rect.width - rect.height / 2, y: 0), [])
+    c.addPath(CGPath(rect: clipRect, transform: nil))
+    c.clip()
+    let gradient = CGGradient(colorsSpace: s, colors: cgColors as CFArray, locations: locations)
+    c.drawLinearGradient(gradient!, start: CGPoint(x: rect.height / 2, y: 0), end: CGPoint(x: rect.width - rect.height / 2, y: 0), options: [])
     
-    UIColor.whiteColor().setStroke()
-    CGContextSetLineWidth(c, 1)
-    CGContextStrokeRect(c, clipRect)
+    UIColor.white.setStroke()
+    c.setLineWidth(1)
+    c.stroke(clipRect)
   }
   
-  override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+  override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
     return true
   }
 }

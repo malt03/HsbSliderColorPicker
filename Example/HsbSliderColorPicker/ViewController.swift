@@ -11,7 +11,7 @@ import HsbSliderColorPicker
 
 class ViewController: UIViewController, HsbSliderViewDelegate {
   
-  @IBOutlet private weak var hsbSliderView: HsbSliderView! {
+  @IBOutlet fileprivate weak var hsbSliderView: HsbSliderView! {
     didSet {
       hsbSliderView.delegate = self
     }
@@ -22,11 +22,11 @@ class ViewController: UIViewController, HsbSliderViewDelegate {
     hsbSliderView.color = view.backgroundColor!
   }
   
-  @IBAction private func changeColor(sender: HsbSliderView) {
+  @IBAction fileprivate func changeColor(_ sender: HsbSliderView) {
     view.backgroundColor = sender.color
   }
   
-  func hsbSliderView(hsbSliderView: HsbSliderView, didChangeColor color: UIColor) {
+  func hsbSliderView(_ hsbSliderView: HsbSliderView, didChangeColor color: UIColor) {
     print(color)
   }
 }

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HsbSliderColorPicker'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0-beta1'
   s.summary          = 'Simple color picker with hsb.'
 
   s.description      = <<-DESC

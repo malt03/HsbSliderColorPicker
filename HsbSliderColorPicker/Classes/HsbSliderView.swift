@@ -9,39 +9,39 @@
 import UIKit
 
 public protocol HsbSliderViewDelegate {
-  func hsbSliderView(hsbSliderView: HsbSliderView, didChangeColor color: UIColor)
+  func hsbSliderView(_ hsbSliderView: HsbSliderView, didChangeColor color: UIColor)
 }
 
-public class HsbSliderView: UIControl {
-  public var delegate: HsbSliderViewDelegate?
-  public var color: UIColor {
+open class HsbSliderView: UIControl {
+  open var delegate: HsbSliderViewDelegate?
+  open var color: UIColor {
     get { return mainView.color }
     set { mainView.color = newValue }
   }
-  public var hue: CGFloat {
+  open var hue: CGFloat {
     get { return mainView.hue }
     set { mainView.hue = newValue }
   }
-  public var saturation: CGFloat {
+  open var saturation: CGFloat {
     get { return mainView.saturation }
     set { mainView.saturation = newValue }
   }
-  public var brightness: CGFloat {
+  open var brightness: CGFloat {
     get { return mainView.brightness }
     set { mainView.brightness = newValue }
   }
   
-  public override var enabled: Bool {
+  open override var isEnabled: Bool {
     get { return mainView.enabled }
     set { mainView.enabled = newValue }
   }
   
-  public override var tintColor: UIColor! {
+  open override var tintColor: UIColor! {
     get { return mainView.tintColor }
     set { mainView.tintColor = newValue }
   }
   
-  private let mainView = HsbSliderMainView.instance()
+  fileprivate let mainView = HsbSliderMainView.instance()
   
   override public init(frame: CGRect) {
     super.init(frame: frame)
@@ -53,18 +53,18 @@ public class HsbSliderView: UIControl {
     initialize()
   }
   
-  private func initialize() {
+  fileprivate func initialize() {
     mainView.didChangeColorHandler = { [weak self] (color) in
       guard let s = self else { return }
       s.delegate?.hsbSliderView(s, didChangeColor: color)
-      s.sendActionsForControlEvents(.ValueChanged)
+      s.sendActions(for: .valueChanged)
     }
     mainView.frame = bounds
     addSubview(mainView)
     
     let views = ["v": mainView]
-    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-0-[v]-0-|", options: [], metrics: nil, views: views))
-    addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[v]-0-|", options: [], metrics: nil, views: views))
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-0-[v]-0-|", options: [], metrics: nil, views: views))
+    addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[v]-0-|", options: [], metrics: nil, views: views))
     updateConstraintsIfNeeded()
   }
 }
